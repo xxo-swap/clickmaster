@@ -55,7 +55,7 @@ const InquiryForm = () => {
     <section className="relative top-12 bg-white py-16 px-5 sm:px-9 xl:px-20">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-3">
-          Work With Me
+         Talk to us : 7408913971
         </h2>
 
         {/* 👇 Animated Text Line */}
@@ -159,6 +159,7 @@ const InquiryForm = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Best Time To Connect...
+              
             </label>
             <select
               name="timeSlot"
@@ -179,7 +180,7 @@ const InquiryForm = () => {
           {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Message
+              Brief
             </label>
             <textarea
               name="message"

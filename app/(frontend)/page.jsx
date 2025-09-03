@@ -1,6 +1,6 @@
 import HeroSection from "@/section/HeroSection";
 import FeaturedWork from "@/section/FeaturedWork";
-import MeetTheMan from "@/section/MeetTheMan";
+import MeetTheMen from "@/section/MeetTheMen";
 
 export const metadata = {
   title: "Clickkmaster - Freelance Photographer in Delhi, Jaipur, Lucknow and North India | Event, Portrait, and Product Photography",
@@ -46,7 +46,7 @@ const Home = () => {
     <main>
       <HeroSection />
       <FeaturedWork />
-      <MeetTheMan />
+      <MeetTheMen />
     </main>
   );
 };
