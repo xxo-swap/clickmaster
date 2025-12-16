@@ -19,7 +19,7 @@ export default function Portfolio() {
     "drinks",
     "sweets",
     "earthmatters",
-    "clothings & brands",
+    "ecommerce",
   ];
 
   useEffect(() => {
