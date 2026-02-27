@@ -10,7 +10,7 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="fixed bg-backGround top-0 z-40 w-full px-5 sm:px-9 xl:px-20 py-4 sm:py-6 lg:py-4">
+    <header className="sticky bg-backGround top-0 z-40  px-5 sm:px-9 xl:px-20 py-4 sm:py-6 lg:py-4 max-w-[1440px] mx-auto">
       <div className="mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
@@ -29,7 +29,7 @@ const Header = () => {
           <Link href="/contact">
             <button className="group relative overflow-hidden px-3 py-2 bg-white text-primary border rounded-full">
               <span className="relative z-10 transition-colors group-hover:text-white">
-                Hire Me
+                Hire Us
               </span>
               <span className="absolute top-0 left-0 w-full h-full bg-hover transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></span>
             </button>

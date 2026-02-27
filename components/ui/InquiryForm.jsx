@@ -52,7 +52,7 @@ const InquiryForm = () => {
   };
 
   return (
-    <section className="relative top-12 bg-white py-16 px-5 sm:px-9 xl:px-20">
+    <section className="relative top-12 bg-backGround py-16 px-5 sm:px-9 xl:px-20 max-w-[1440px] mx-auto">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-3">
          Talk to us : 7408913971

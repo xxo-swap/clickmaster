@@ -1,32 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { supabase } from "app/lib/supabaseClient";
 import Link from "next/link";
 import FeaturedImageBlock from "@/ui/FeaturedImageBlock";
+import { featuredImages } from "../../data/featuredImages";
 
 const FeaturedWork = () => {
-  const [featuredImages, setFeaturedImages] = useState([]);
   const [isLgOrAbove, setIsLgOrAbove] = useState(false);
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const { data, error } = await supabase
-        .from("featured_images")
-        .select("name, description, kahani, image_url")
-        .order("id", { ascending: true });
-
-      if (error) {
-        console.error("Error fetching images:", error.message);
-        return;
-      }
-      console.log(data)
-      setFeaturedImages(data);
-    };
-
-    fetchImages();
-  }, []);
-
-  // Detect screen width to switch between `description` and `kahani`
   useEffect(() => {
     const checkScreenSize = () => {
       setIsLgOrAbove(window.innerWidth >= 1024);
@@ -38,7 +18,7 @@ const FeaturedWork = () => {
   }, []);
 
   return (
-    <section className="relative bg-white py-16 px-5 sm:px-9 xl:px-20">
+    <section className="relative bg-backGround py-16 px-5 sm:px-9 xl:px-20 mx-auto max-w-[1440px]">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:mb-14 mb-12 text-primary">
         Featured Work
       </h2>
@@ -46,17 +26,16 @@ const FeaturedWork = () => {
       <div className="grid grid-cols-1 gap-20">
         {featuredImages.map((item, index) => (
           <FeaturedImageBlock
-            key={index}
+            key={item.id}
             image={item.image_url}
             title={item.name}
             description={isLgOrAbove ? item.kahani : item.description}
             reverse={index % 2 !== 0}
-            index = {index}
+            index={index}
           />
         ))}
       </div>
 
-      {/* CTA Button */}
       <div className="mt-16 text-center relative">
         <Link href="/portfolio">
           <button className="group relative overflow-hidden px-3 py-2 bg-white text-primary border rounded-full">

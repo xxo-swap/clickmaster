@@ -1,14 +1,19 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { supabase } from "app/lib/supabaseClient";
 import gsap from "gsap";
 
 const HeroSection = ({ mobileVideoIndex = 2, tabletVideoIndex = 2 }) => {
   const heroRef = useRef(null);
-  const [videos, setVideos] = useState([]);
   const [videosLoaded, setVideosLoaded] = useState(0);
-  const [screenType, setScreenType] = useState("large"); // large | tablet | mobile
+  const [screenType, setScreenType] = useState("large");
+
+  // ✅ Local video paths (served from /public)
+  const videos = [
+    "/videos/heroGrid/1.webm",
+    "/videos/heroGrid/2.webm",
+    "/videos/heroGrid/3.webm",
+  ];
 
   // ✅ Detect screen type
   useEffect(() => {
@@ -24,33 +29,9 @@ const HeroSection = ({ mobileVideoIndex = 2, tabletVideoIndex = 2 }) => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // ✅ Fetch all videos from Supabase
+  // ✅ Animate text after required videos load
   useEffect(() => {
-    const fetchVideos = async () => {
-      const { data, error } = await supabase.storage
-        .from("personal")
-        .list("heroGrid", { limit: 50 });
-
-      if (error) {
-        console.error("Error fetching videos:", error.message);
-        return;
-      }
-
-      const videoUrls = data
-        .sort((a, b) => Number(a.name.split(".")[0]) - Number(b.name.split(".")[0]))
-        .map((file) => 
-          supabase.storage.from("personal").getPublicUrl(`heroGrid/${file.name}`).data.publicUrl
-        );
-
-      setVideos(videoUrls);
-    };
-
-    fetchVideos();
-  }, []);
-
-  // ✅ Animate text after videos load
-  useEffect(() => {
-    if (!heroRef.current || videos.length === 0) return;
+    if (!heroRef.current) return;
 
     const requiredVideos = screenType === "large" ? videos.length : 1;
     if (videosLoaded < requiredVideos) return;
@@ -64,17 +45,24 @@ const HeroSection = ({ mobileVideoIndex = 2, tabletVideoIndex = 2 }) => {
     }, heroRef);
 
     return () => ctx.revert();
-  }, [videosLoaded, videos.length, screenType]);
+  }, [videosLoaded, screenType]);
 
-  // ✅ Determine videos to render based on screen type
+  // ✅ Determine videos to render
   let videosToRender = [];
-  if (screenType === "large") videosToRender = videos; // show all
-  else if (screenType === "tablet") videosToRender = [videos[tabletVideoIndex]]; // show tablet-specific
-  else videosToRender = [videos[mobileVideoIndex]]; // show mobile-specific
+  if (screenType === "large") videosToRender = videos;
+  else if (screenType === "tablet") videosToRender = [videos[tabletVideoIndex]];
+  else videosToRender = [videos[mobileVideoIndex]];
 
   return (
-    <section ref={heroRef} className="relative w-full h-screen overflow-hidden bg-black">
-      <div className={`absolute inset-0 ${screenType === "large" ? "grid grid-cols-3 gap-1" : "flex"}`}>
+    <section
+      ref={heroRef}
+      className="relative w-full h-screen overflow-hidden bg-black"
+    >
+      <div
+        className={`absolute inset-0 ${
+          screenType === "large" ? "grid grid-cols-3 gap-1" : "flex"
+        }`}
+      >
         {videosToRender.map((video, idx) => (
           <video
             key={idx}
@@ -91,7 +79,10 @@ const HeroSection = ({ mobileVideoIndex = 2, tabletVideoIndex = 2 }) => {
 
       {/* Hero Text */}
       <div className="relative z-20 flex flex-col justify-center items-center h-full px-6 text-center text-white/50">
-        <h1 id="hero-text" className="opacity-0 text-4xl sm:text-5xl md:text-6xl font-bold">
+        <h1
+          id="hero-text"
+          className="opacity-0 text-4xl sm:text-5xl md:text-6xl font-bold"
+        >
           Serving Taste Through the Lens.
         </h1>
       </div>

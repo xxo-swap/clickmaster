@@ -38,7 +38,7 @@ function Categories({ category, index }) {
   }`;
 
   return (
-    <div className="relative grid grid-cols-1 gap-5 sm:gap-8">
+    <div className="relative grid grid-cols-1 gap-5 sm:gap-8 max-w-[1440px] mx-auto">
       {/* Image with parallax only on lg+ screens */}
       <div
         ref={imageWrapperRef} 
