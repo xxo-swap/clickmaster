@@ -1,64 +1,121 @@
 "use client";
 
-import React from "react";
 import { FaInstagram, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { getWhatsAppLink } from "@/utils/Whatsapp";
 
-const Footer = () => {
+export default function Footer() {
   const whatsappNumber = "917408913971";
-  const whatsappMessage = "Hello! I'm interested in your photography services.";
+  const whatsappMessage =
+    "Hello! I'm interested in your photography services.";
 
   return (
-    <footer className="relative bg-backGround text-white sm:px-1 lg:px-36 py-20">
-      <div className="max-w-6xl mx-auto flex flex-col justify-between items-center gap-4 z-50 relative">
-        
-        {/* Social Links */}
-        <div className="flex gap-6 text-lg">
-          {/* Email Icon (hidden on lg and up) */}
-          <a
-            href="mailto:sunny@clickkmaster.in"
-            className="group relative transition-colors duration-300 ease-in-out z-50 block lg:hidden"
-            aria-label="Email"
-          >
-            <FaEnvelope
-              className="text-[#311514] group-hover:text-[#D14836] transition-colors duration-300 ease-in-out "
-            />
-          </a>
+    <footer className="border-t border-zinc-200 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20">
 
-          {/* Instagram */}
-          <a
-            href="https://instagram.com/clickkmaster"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative transition-colors duration-300 ease-in-out z-50"
-            aria-label="Instagram"
-          >
-            <FaInstagram
-              className="text-[#311514] group-hover:text-[#E1306C] transition-colors duration-300 ease-in-out"
-            />
-          </a>
+        <div className="grid gap-16 md:grid-cols-3">
 
-          {/* WhatsApp */}
-          <a
-            href={getWhatsAppLink(whatsappNumber, whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative transition-colors duration-300 ease-in-out z-50"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp
-              className="text-[#311514] group-hover:text-[#25D366] transition-colors duration-300 ease-in-out"
-            />
-          </a>
+          {/* Brand */}
+          <div>
+            <p className="text-sm uppercase tracking-[0.2em] text-primary">
+              Clickkmaster
+            </p>
+
+            <h3 className="mt-5 text-3xl font-medium tracking-tight text-zinc-900">
+              Product Photography
+            </h3>
+
+            <p className="mt-6 max-w-sm text-zinc-600 leading-7">
+              Helping brands create premium imagery for food, drinks,
+              e-commerce and lifestyle products.
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+              Contact
+            </h4>
+
+            <div className="mt-6 space-y-4 text-zinc-700">
+
+              <a
+                href="mailto:sunny@clickkmaster.in"
+                className="block hover:text-primary transition"
+              >
+                sunny@clickkmaster.in
+              </a>
+
+              <a 
+                href="tel:+917408913971"
+                className="block hover:text-primary transition"
+              >
+                +91 878 9069 866
+              </a>
+
+              <p className="leading-7">
+                Govardhan, Mathura
+                <br />
+                Uttar Pradesh, India
+              </p>
+
+            </div>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+              Connect
+            </h4>
+
+            <div className="mt-6 flex gap-6 text-2xl">
+
+              <a
+                href="mailto:sunny@clickkmaster.in"
+                className="text-zinc-500 hover:text-primary transition"
+              >
+                <FaEnvelope />
+              </a>
+
+              <a
+                href="https://instagram.com/clickkmaster"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-primary transition"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href={getWhatsAppLink(
+                  whatsappNumber,
+                  whatsappMessage
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-primary transition"
+              >
+                <FaWhatsapp />
+              </a>
+
+            </div>
+          </div>
+
         </div>
 
-        {/* Copyright */}
-        <p className="text-xs text-gray-500 text-center sm:text-right">
-          © {new Date().getFullYear()} Clickkmaster. All rights reserved.
-        </p>
+        {/* Bottom */}
+        <div className="mt-20 flex flex-col gap-4 border-t border-zinc-200 pt-8 md:flex-row md:items-center md:justify-between">
+
+          <p className="text-sm text-zinc-500">
+            © {new Date().getFullYear()} Clickkmaster. All rights reserved.
+          </p>
+
+          <p className="text-sm text-zinc-400 greyscale">
+            Crafted with care.
+          </p>
+
+        </div>
+
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

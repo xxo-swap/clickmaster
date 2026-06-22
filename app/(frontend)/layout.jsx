@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <LenisWrapper>
-          <Header />
           <TransitionProvider>
+
             {children}
             <Footer />
           </TransitionProvider>

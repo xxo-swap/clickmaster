@@ -38,15 +38,5 @@ Every bite brings joy, memories, and a little indulgence.`,
     kahani: `"Earth matters" is a reminder of our connection to the planet.
 It represents sustainability, eco-conscious living, and green innovation.
 Caring for the earth today secures tomorrow's future.`,
-  },
-  {
-    id: 5,
-    name: "clothings & brands",
-    description: "Clothing in Focus",
-    image_url: "/images/featured/ecommerce.webp",
-    created_at: "2025-05-31",
-    kahani: `Clothing is more than just fabric—it's an expression of identity and culture.
-From traditional wear to modern fashion, what we wear tells a story.
-It combines comfort, style, and sometimes, bold statements.`,
-  },
+  }
 ];

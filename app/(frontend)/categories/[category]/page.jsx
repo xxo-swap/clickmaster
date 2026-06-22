@@ -1,13 +1,11 @@
-import DynamicGallery from "@/section/Category";
+import CategoryPage from "@/section/Category";
 
-
-
-export default async function CategoryPage({ params }) {
+export default async function Categories({ params }) {
   const { category } = await params;
 
   return (
-    <main className="min-h-screen ">
-      <DynamicGallery folder={category} />
+    <main className="min-h-screen">
+      <CategoryPage slug={category} />
     </main>
   );
 }

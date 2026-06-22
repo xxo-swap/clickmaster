@@ -29,8 +29,7 @@ const Header = () => {
           <Link href="/contact">
             <button className="group relative overflow-hidden px-3 py-2 bg-white text-primary border rounded-full">
               <span className="relative z-10 transition-colors group-hover:text-white">
-                Hire Us
-              </span>
+              Inquiry              </span>
               <span className="absolute top-0 left-0 w-full h-full bg-hover transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></span>
             </button>
           </Link>
