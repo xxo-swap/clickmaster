@@ -34,7 +34,6 @@ export const categories = [
       "/categories/foods/10.webp",
       "/categories/foods/11.webp",
       "/categories/foods/12.webp",
-      "/categories/foods/13.webp",
       "/categories/foods/14.webp",
       "/categories/foods/15.webp",
       "/categories/foods/16.webp",
@@ -74,12 +73,10 @@ export const categories = [
       "/categories/drinks/1.webp",
       "/categories/drinks/2.webp",
       "/categories/drinks/3.webp",
-      "/categories/drinks/4.webp",
       "/categories/drinks/5.webp",
       "/categories/drinks/6.webp",
       "/categories/drinks/7.webp",
       "/categories/drinks/8.webp",
-      "/categories/drinks/9.webp",
       "/categories/drinks/10.webp",
       "/categories/drinks/11.webp",
     ],
@@ -122,7 +119,6 @@ export const categories = [
       "/categories/sweets/6.webp",
       "/categories/sweets/7.webp",
       "/categories/sweets/8.webp",
-      "/categories/sweets/9.webp",
     ],
 
     seo: {

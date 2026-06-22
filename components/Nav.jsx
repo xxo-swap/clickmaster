@@ -1,8 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  { name: "Contact", path: "/contact" },
-  { name: "Portfolio", path: "/portfolio" },
+  { name: "Gallery", path: "/portfolio" },
 ];
 
 const Nav = () => {

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function MeetTheMen() {
   return (
-    <section className="bg-white">
+    <section className="">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 lg:py-32 py-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Image */}
@@ -64,7 +64,7 @@ export default function MeetTheMen() {
 
                 {/* Shwetank */}
                 <a
-                  href="https://www.instagram.com/shwetank"
+                  href="https://www.instagram.com/cruising_wolf/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between rounded-3xl border border-zinc-200 px-6 py-5 transition-all hover:border-primary"
@@ -75,7 +75,7 @@ export default function MeetTheMen() {
                     </p>
 
                     <p className="mt-1 text-zinc-500">
-                      @shwetank
+                      @cruising_wolf
                     </p>
                   </div>
 

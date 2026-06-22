@@ -26,7 +26,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex gap-10 items-center">
           <Nav />
-          <Link href="/contact">
+          <Link href="/inquiry">
             <button className="group relative overflow-hidden px-3 py-2 bg-white text-primary border rounded-full">
               <span className="relative z-10 transition-colors group-hover:text-white">
               Inquiry              </span>
