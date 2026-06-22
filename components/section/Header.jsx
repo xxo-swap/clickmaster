@@ -55,11 +55,11 @@ const Header = () => {
           <Link href="/" onClick={() => setIsOpen(false)}>
             <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</span>
           </Link>
-          <Link href="/portfolio" onClick={() => setIsOpen(false)}>
-            <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</span>
+          <Link href="/inquiry" onClick={() => setIsOpen(false)}>
+            <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Inquiry</span>
           </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)}>
-            <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</span>
+          <Link href="/portfolio" onClick={() => setIsOpen(false)}>
+            <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Explore Categories</span>
           </Link>
         </div>
       )}

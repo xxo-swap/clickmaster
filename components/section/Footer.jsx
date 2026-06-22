@@ -9,22 +9,22 @@ export default function Footer() {
     "Hello! I'm interested in your photography services.";
 
   return (
-    <footer className="border-t border-zinc-200 bg-white">
+    <footer className="border-t border-zinc-200 bg-primary text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20">
 
         <div className="grid gap-16 md:grid-cols-3">
 
           {/* Brand */}
           <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-primary">
+            <p className="text-sm uppercase tracking-[0.2em] text-white">
               Clickkmaster
             </p>
 
-            <h3 className="mt-5 text-3xl font-medium tracking-tight text-zinc-900">
+            <h3 className="mt-5 text-3xl font-medium tracking-tight text-white">
               Product Photography
             </h3>
 
-            <p className="mt-6 max-w-sm text-zinc-600 leading-7">
+            <p className="mt-6 max-w-sm text-white leading-7">
               Helping brands create premium imagery for food, drinks,
               e-commerce and lifestyle products.
             </p>
@@ -32,11 +32,11 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+            <h4 className="text-sm uppercase tracking-[0.2em] text-white">
               Contact
             </h4>
 
-            <div className="mt-6 space-y-4 text-zinc-700">
+            <div className="mt-6 space-y-4 text-white">
 
               <a
                 href="mailto:sunny@clickkmaster.in"
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+            <h4 className="text-sm uppercase tracking-[0.2em] text-white">
               Connect
             </h4>
 
@@ -71,7 +71,7 @@ export default function Footer() {
 
               <a
                 href="mailto:sunny@clickkmaster.in"
-                className="text-zinc-500 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <FaEnvelope />
               </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                 href="https://instagram.com/clickkmaster"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <FaInstagram />
               </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-primary transition"
+                className="text-white hover:text-primary transition"
               >
                 <FaWhatsapp />
               </a>
@@ -105,11 +105,11 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-20 flex flex-col gap-4 border-t border-zinc-200 pt-8 md:flex-row md:items-center md:justify-between">
 
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-white">
             © {new Date().getFullYear()} Clickkmaster. All rights reserved.
           </p>
 
-          <p className="text-sm text-zinc-400 greyscale">
+          <p className="text-sm text-white greyscale">
             Crafted with care.
           </p>
 

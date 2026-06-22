@@ -1,87 +1,86 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import Categories from "@/Categories";
+import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { categories } from "../../data/categories";
 
 export default function Portfolio() {
-  const [categoryData, setCategoryData] = useState([]);
-  const sectionRef = useRef(null);
-
-  const categories = [
-    "foods",
-    "drinks",
-    "sweets",
-    "earthmatters",
-  ];
-
-  useEffect(() => {
-    const results = categories.map((category) => ({
-      name: category.charAt(0).toUpperCase() + category.slice(1),
-      image: `/categories/${category}/1.webp`,
-      url: `/categories/${category}`,
-    }));
-
-    setCategoryData(results);
-  }, []);
-
-  // Animation
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from(".category-card", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, [categoryData]);
+  const featuredCategories = categories
+    .filter((category) => category.featured)
+    .sort((a, b) => a.order - b.order);
 
   return (
-    <section
-      ref={sectionRef}
-      className="px-5 sm:px-10 xl:px-20 w-full py-24 relative max-w-[1440px] mx-auto "
-    >
-      <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-800 mb-3">
-          Explore Our Categories
+    <section className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-32">
+      {/* Heading */}
+      <div className="max-w-2xl mb-20">
+        <p className="uppercase tracking-[0.2em] text-sm text-zinc-500">
+          Portfolio
+        </p>
+
+        <h2 className="mt-4 text-5xl md:text-7xl font-medium tracking-tight">
+          Categories
         </h2>
-        <p className="text-gray-600 text-base">
-          Discover curated selections of our finest work—from fashion to food,
-          decor to earth-conscious design.
+
+        <p className="mt-6 text-lg text-zinc-600">
+          Creating premium visuals for food, beverages and consumer brands.
         </p>
       </div>
 
-      <div className="grid gap-12 lg:gap-10 grid-cols-1">
-        {categoryData.map((category, index) => (
-          <div key={category.name} className="category-card lg:my-[30vh]">
-            <Categories category={category} index={index} />
-          </div>
-        ))}
-      </div>
+      {/* Cards */}
+      <div className="grid md:grid-cols-2 gap-10">
+        {featuredCategories.map((category) => (
+          <Link
+            key={category.slug}
+            href={`/categories/${category.slug}`}
+            className="group"
+          >
+            {/* Image */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[32px]">
+              <Image
+                src={category.coverImage}
+                alt={category.title}
+                fill
+                className="
+                  object-cover
+                  transition
+                  duration-700
+                  group-hover:scale-105
+                "
+              />
+            </div>
 
-      <div className="mt-14 text-center">
-        <Link href="/contact">
-          <button className="group relative overflow-hidden px-6 py-3 bg-white text-primary border rounded-full">
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              Drop Your Query
-            </span>
-            <span className="absolute top-0 left-0 w-full h-full bg-primary -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
-          </button>
-        </Link>
+            {/* Content */}
+            <div className="mt-6">
+              <h3 className="text-3xl font-medium">
+                {category.title}
+              </h3>
+
+              <p className="mt-3 text-zinc-600">
+                {category.shortDescription}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {category.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="
+                      px-4
+                      py-2
+                      rounded-full
+                      bg-white
+                      text-xxs
+                      font-medium
+                      text-primary
+                    "
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );
