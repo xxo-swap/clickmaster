@@ -25,8 +25,8 @@ export default function Footer() {
             </p>
 
             <h3 className="mt-5 text-xl font-medium tracking-tight text-white">
-              Product <br />
-              Photography & Videography
+              
+              Photography & Videography for <br />Food and Product Brands
             </h3>
 
             <p className="mt-6 max-w-sm leading-7 text-white">
