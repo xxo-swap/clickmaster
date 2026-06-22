@@ -36,17 +36,18 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="text-xxs ">
             <h4 className="text-sm uppercase tracking-[0.2em] text-white">
               Contact
             </h4>
 
-            <div className="mt-6 space-y-1 text-white">
-              <a
+            <div className="flex flex-col gap-8 mt-5  text-white">
+             <div>
+               <a
                 href="mailto:sunny@clickkmaster.in"
                 className="block transition-opacity hover:opacity-80"
               >
-                sunny@clickkmaster.in
+                inquiry@clickkmaster.in
               </a>
 
               <a
@@ -62,12 +63,15 @@ export default function Footer() {
               >
                 +91 74089 13971
               </a>
+             </div>
 
-              <p className="leading-7">
+              <div>
+                <p className="leading-7">
                 Flat No-F6-G09, Centurion Park Terrace Home,
                 Techzone-IV, Greater Noida West,
                 Gautam Buddha Nagar, Uttar Pradesh 201306
               </p>
+              </div>
             </div>
           </div>
 
@@ -77,9 +81,9 @@ export default function Footer() {
               Connect
             </h4>
 
-            <div className="mt-6 flex gap-6 text-2xl">
+            <div className="mt-6 flex gap-6 text-xl">
               <a
-                href="mailto:sunny@clickkmaster.in"
+                href="mailto:inquiry@clickkmaster.in"
                 aria-label="Email"
                 className="transition-transform duration-300 hover:scale-110"
               >
