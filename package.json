@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-     "postbuild": "node scripts/generate-sitemap-urls.js && next-sitemap"
+     "postbuild": ""
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
