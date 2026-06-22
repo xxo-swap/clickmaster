@@ -52,7 +52,7 @@ export default function FloatingSocials() {
       {/* WhatsApp */}
       <a
         href={getWhatsAppLink(
-          "917408913971",
+          "918789069866",
           "Hello! I'm interested in your photography services."
         )}
         target="_blank"

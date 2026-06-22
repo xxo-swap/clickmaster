@@ -9,7 +9,7 @@ import { FiHeart } from "react-icons/fi";
 import { getWhatsAppLink } from "@/utils/Whatsapp";
 
 export default function Footer() {
-  const whatsappNumber = "917408913971";
+  const whatsappNumber = "918789069866";
 
   const whatsappMessage =
     "Hello! I'm interested in your photography services.";
