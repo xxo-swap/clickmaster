@@ -57,7 +57,7 @@ export const categories = [
 
     heroImage: "/categories/drinks/1.webp",
 
-    coverImage: "/categories/drinks/9.webp",
+    coverImage: "/categories/drinks/1.webp",
 
     featured: true,
 
